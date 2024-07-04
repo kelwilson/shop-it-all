@@ -16,9 +16,8 @@ const url = `https://fakestoreapi.com/products`
              let listItem = document.createElement('li')
             //  listItem.textContent = elem <--> Another way to display the list items
              listItem.innerHTML =  `
-             <li>${elem}</li>
+             <li><a href="#">${elem}</a></li>
              `
-             console.log(listItem);
              document.querySelector('.category').appendChild(listItem)
          })
           
@@ -28,10 +27,10 @@ const url = `https://fakestoreapi.com/products`
               const articles = document.createElement('article')
               articles.setAttribute('class', 'article');
               articles.innerHTML = `
-                <a>
+                <a href="#">
                 <span>${item.id}</span>
-                <img src="${item.image}" alt="item">
-                <h2>${item.title}</h2>
+                <img src="${item.image}" alt="item"> 
+                <h3>${item.title}</h3>
                 <span>$ ${item.price}</span>
                 <span>${item.rating.rate}</span>
                 <span>${item.rating.count}</span>

@@ -42,6 +42,7 @@ li{
 
 a{
   text-decoration: none;
+  color: #000;
 }
 
 input{
@@ -51,15 +52,13 @@ input{
   background: none;
   width: 100%;
 }
-/* .col-6 >li i{
-  display: block;
+
+/* 
+:is(li:first-child, li:last-child) {
+border-start-start-radius: 2px;
+  // use to select 2 different elements that share the same styles 
 } */
 
-li:first-child,
-li:last-child {
-border-start-start-radius: 2px;
-  /* width: 30px; */
-}
 
 .card-wrap{
   width: 300px;
@@ -214,8 +213,16 @@ article h3{
   font-size: 15px;
 }
 
+.article  h3 + span + span{
+  display: block;
+}
+
 .article img{
   justify-self: center;
+}
+
+.hidden {
+  display: none;
 }
 
 /******************************************
