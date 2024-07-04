@@ -1,0 +1,223 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch+Pop&family=Rubik+Moonrocks&family=Yeseva+One&display=swap');
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --img-bg: #f8f8f8;
+  --nav-blue: #232f3e;
+  --primary-font: "Raleway", sans-serif;
+  --secondary-font: "Inter", sans-serif;
+  --round-font: "Rubik Glitch Pop", system-ui;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  /* margin: 0 auto; */
+  width: 220px;
+  height: 250px;
+}
+
+
+/******************************************
+/* NAV ITEMS
+/*******************************************/
+
+
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+input{
+  outline: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  width: 100%;
+}
+/* .col-6 >li i{
+  display: block;
+} */
+
+li:first-child,
+li:last-child {
+border-start-start-radius: 2px;
+  /* width: 30px; */
+}
+
+.card-wrap{
+  width: 300px;
+}
+
+.header{
+  background: var(--nav-blue);
+  
+}
+
+nav{
+  /* padding: 30px 0; */
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns: 0.8fr 3fr 1.2fr;
+  gap: 5px;
+  padding: 10px;
+
+}
+
+.logo{
+  font-family: var(--round-font);
+  font-size: 1.7em;
+  /* color: #fff; */
+}
+
+
+
+nav li:not(.logo){
+  font-family: var(--secondary-font);
+  font-size: 0.8em;
+}
+
+nav ul li > a:not(.second-nav-ul li:first-child a){
+  color: #fff;
+}
+
+.first-nav-ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.second-nav-ul {
+  /* height: 50px;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.second-nav-ul li{
+ /* margin: 5px; */ 
+ /* border: 1px solid #000; */
+ padding: 11px ;
+}
+
+.second-nav-ul li:first-child{
+  background-color: rgb(226, 224, 224);
+  border-radius: 5px 0 0 5px;  /*border-radius-top-left && border-radius-bottom-left*/
+}
+
+.second-nav-ul li:first-child a{
+  color: #000;
+  /* filter: blur(8px); */
+  opacity: 50%;
+}
+
+.second-nav-ul li:nth-child(2){
+  /* border: none; */
+  width: 89%;
+  background: #f8f8f8;
+}
+
+.second-nav-ul li:last-child{
+  background: rgb(247, 173, 63);
+  border-radius: 0 5px 5px 0;   /*border-radius-top-right && border-radius-bottom-right*/
+  /* font-size: 1.2em; */
+  /* font-weight: 700; */
+}
+.third-nav-ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  /* font-family: var(--secondary-font); */
+}
+
+.third-nav-ul strong{
+  display: block;
+  font-size: 1.1em;
+}
+
+.third-nav-ul li:first-child{
+  font-size: 1em;
+  font-weight: 700;
+ 
+}
+
+.third-nav-ul li:last-child .fa-brands{
+  font-size: 2.2em;
+  font-weight: 700;
+}
+/******************************************
+/* MAIN-CONTENT
+/*******************************************/
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 0.8fr 4fr;
+  margin-top: 50px;
+}
+
+.aside{
+  /* border: 2px solid #000; */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: var(--secondary-font);
+}
+
+.aside h2{
+  margin-top: 10px;
+}
+
+.category {
+  margin: 10px;
+}
+
+.content-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* place-items: center; */
+  gap: 30px;
+  /* padding: 50px; */
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* padding: 30px; */
+  width: 250px;
+  border: 1px solid #000;
+  background: var(--img-bg);
+  padding: 10px ;
+  border-radius: 2%;
+  font-family: var(--primary-font);
+}
+
+article h3{
+  font-size: 15px;
+}
+
+.article img{
+  justify-self: center;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
