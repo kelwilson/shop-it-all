@@ -32,26 +32,26 @@ const url = `https://fakestoreapi.com/products`
           
           
     // Getting the Products
-        //   data.forEach(item => {
-        //       console.log(item);
-        //       const articles = document.createElement('article')
-        //       articles.setAttribute('class', 'article');
-        //       articles.innerHTML = `
-        //         <a>
-        //         <span>${item.id}</span>
-        //         <img src="${item.image}" alt="item">
-        //         <h2>${item.title}</h2>
-        //         <span>$ ${item.price}</span>
-        //         <span>${item.rating.rate}</span>
-        //         <span>${item.rating.count}</span>
+          data.forEach(item => {
+              console.log(item);
+              const articles = document.createElement('article')
+              articles.setAttribute('class', 'article');
+              articles.innerHTML = `
+                <a>
+                <span>${item.id}</span>
+                <img src="${item.image}" alt="item">
+                <h2>${item.title}</h2>
+                <span>$ ${item.price}</span>
+                <span>${item.rating.rate}</span>
+                <span>${item.rating.count}</span>
                 
                 
-        //         </a>
+                </a>
               
               
-        //       `
-        //       document.querySelector('.content-container').append(articles)
-        //   })
+              `
+              document.querySelector('.content-container').append(articles)
+          })
           
           
       })
