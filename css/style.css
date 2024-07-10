@@ -169,13 +169,14 @@ nav ul li > a:not(.second-nav-ul li:first-child a),
   background: #2f4e60;    /*#3a4d58*/
   font-family: var(--secondary-font);
   font-size: 0.8em;
-  padding: 10px;
+  padding: 13px 25px;
+  font-weight: 500;
 }
 
 .nav-extra ul {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 13px;
 
 }
 /******************************************
