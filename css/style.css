@@ -166,16 +166,16 @@ nav ul li > a:not(.second-nav-ul li:first-child a),
 
 
 .nav-extra {
-  background: #033b5c;
+  background: #2f4e60;    /*#3a4d58*/
   font-family: var(--secondary-font);
   font-size: 0.8em;
-  padding: 5px;
+  padding: 10px;
 }
 
 .nav-extra ul {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 
 }
 /******************************************
