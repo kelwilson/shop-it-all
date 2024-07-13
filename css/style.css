@@ -179,6 +179,17 @@ nav ul li > a:not(.second-nav-ul li:first-child a),
   gap: 13px;
 
 }
+
+#menu-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#menu-list ul a{
+  color: #000;
+}
+
 /******************************************
 /* MAIN-CONTENT
 /*******************************************/
