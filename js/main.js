@@ -34,6 +34,9 @@ const url = `https://fakestoreapi.com/products`
                 <span>$ ${item.price}</span>
                 <span>${item.rating.rate}</span>
                 <span>${item.rating.count}</span>
+                <div>
+                <button><a href="#">Add to cart</a></button>
+                </div>
                 
                 
                 </a>

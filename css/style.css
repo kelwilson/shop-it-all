@@ -265,8 +265,22 @@ article h3{
 
 .article img{
   /* justify-self: center; */
-  background: ;
+  /* background: ; */
   mix-blend-mode: multiply;    /* just learnt how to use this to remove background from an image in css*/
+}
+
+.article button {
+  border: none;
+  color: #000;
+  background: orange;
+}
+
+.article div {
+ border: 2px solid orange;
+ background: orange;
+ border-radius: 50px;
+ width: 100px;
+ padding: 5px;
 }
 
 .hidden {
