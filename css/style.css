@@ -12,7 +12,7 @@
 }
 
 :root{
-  --img-bg: #f8f8f8;
+  --img-bg: #eee;  /* #c2b9b9;*/
   --nav-blue: #232f3e;
   --primary-font: "Raleway", sans-serif;
   --secondary-font: "Inter", sans-serif;
@@ -196,21 +196,28 @@ nav ul li > a:not(.second-nav-ul li:first-child a),
 
 .wrapper{
   display: grid;
-  grid-template-columns: 0.8fr 4fr;
-  margin-top: 50px;
+  grid-template-columns: 0.8fr 4fr; 
+  margin-top: 20px; 
+  /* display: flex; */
+  gap: 20px; 
 }
 
 .aside{
-  /* border: 2px solid #000; */
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+  border-right: 2px solid rgb(161, 157, 157);
+  /* display: flex; */
+  /* flex-direction: column; */
+  padding: 0 0 0 20px  ;
   font-family: var(--secondary-font);
+  height: 800px;
 }
 
-.aside h2{
-  margin-top: 10px;
+hr{
+  transform: rotate(90deg);
 }
+
+/* .aside h2{
+   margin-top: 10px; 
+} */
 
 .category {
   margin: 10px;
@@ -230,13 +237,20 @@ nav ul li > a:not(.second-nav-ul li:first-child a),
 .article {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
   /* padding: 30px; */
   width: 220px;
   /* height: 300px; */
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   background: var(--img-bg);
   padding: 10px ;
+  box-shadow:  -1px 1px var(--img-bg),
+         -2px 2px var(--img-bg),
+         -3px 3px var(--img-bg),
+         -4px 4px var(--img-bg),
+         -5px 5px var(--img-bg);
   border-radius: 2%;
   font-family: var(--primary-font);
 }
@@ -250,13 +264,19 @@ article h3{
 }
 
 .article img{
-  justify-self: center;
+  /* justify-self: center; */
+  background: ;
+  mix-blend-mode: multiply;    /* just learnt how to use this to remove background from an image in css*/
 }
 
 .hidden {
   display: none;
 }
 
+/* #image{
+  width: 250px;
+  height: 250px;
+} */
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

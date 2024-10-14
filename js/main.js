@@ -52,36 +52,77 @@ const url = `https://fakestoreapi.com/products`
 
       //Home.html products api call
 
-      async function getProducts () {
-        try {
-            const res = await fetch(`https://api.escuelajs.co/api/v1/products`)
+    //   async function getProducts () {
+    //     try {
+    //         const res = await fetch(`https://api.escuelajs.co/api/v1/products`)
 
-            if(!res.ok) {
-                throw new Error(`HTTP error: ${response.status}`)
-            }
-            // let homeCategory = []
-            const data = await res.json()
-            data.forEach(item => {
-                console.log(item)
-                const homeArticles = document.createElement('article')
-                homeArticles.setAttribute('class', 'home-article');
-                //getting all the images of the products
-                item.images.forEach(img => {
-                    console.log(img)
-                // inserting the images into an image tag 
-                    homeArticles.innerHTML = `
-                <img src="${item.image}" alt="item"> 
-                `
-                })
+    //         if(!res.ok) {
+    //             throw new Error(`HTTP error: ${res.status}`)
+    //         }
+    //         // let homeCategory = []
+    //         const data = await res.json()
+    //         data.forEach(item => {
+    //             // console.log(item)
+    //             //getting all the images of the products
+    //             item.images.forEach(img => {
+    //                 console.log(img)
+    //                 const homeArticles = document.createElement('article')
+    //                 homeArticles.setAttribute('class', 'home-article');
+    //             // inserting the images into an image tag 
+    //                 homeArticles.innerHTML = `
+    //                 <img src="${img}" alt="item"> 
+    //                 `
+    //             document.querySelector('#home-products').append(homeArticles)
+
+    //             })
 
                 
 
-            })
-            // console.log(data)
+    //         })
+    //         // console.log(data)
             
-        } catch (error) {
-               console.log(`Error: ${error}`) 
-      }
-    }
+    //     } catch (error) {
+    //            console.log(`Error: ${error}`) 
+    //   }
+    // }
 
-    getProducts()
+    // getProducts()
+
+    async function getProducts() {
+        try {
+            const res = await fetch(`https://api.escuelajs.co/api/v1/products`);
+    
+            if (!res.ok) {
+                throw new Error(`HTTP error: ${res.status}`);
+            }
+    
+            const data = await res.json();
+    
+            data.forEach(item => {
+                // Create a new article element for each product
+                const homeArticles = document.createElement('article');
+                homeArticles.setAttribute('class', 'home-article');
+    
+                // Loop through each image for the product
+                item.images.forEach(img => {
+                    console.log(img)
+                    // Create an image element for each image
+                    const imgTag = document.createElement('img');
+                    imgTag.src = img;
+                    imgTag.alt = "item";
+    
+                    // Append the image to the article
+                    homeArticles.append(imgTag);
+                });
+    
+                // Append the article to the #home-products section
+                document.querySelector('#home-products').append(homeArticles);
+            });
+    
+        } catch (error) {
+            console.log(`Error: ${error}`);
+        }
+    }
+    
+    getProducts();
+    
