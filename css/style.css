@@ -255,7 +255,13 @@ hr{
   font-family: var(--primary-font);
 }
 
-article h3{
+.article a {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.article h3{
   font-size: 15px;
 }
 
@@ -283,6 +289,14 @@ article h3{
  padding: 5px;
 }
 
+
+/**********     HOME-PAGE     *********/
+.home-article {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  
+}
 .hidden {
   display: none;
 }

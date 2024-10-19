@@ -102,13 +102,20 @@ const url = `https://fakestoreapi.com/products`
             const data = await res.json();
     
             data.forEach(item => {
+                
+                // let imageArr = {}
+                // for(let i = 0; i < item.images.length; i++) {
+
+                //     imageArr = item.images[i]
+                // }
+                // console.log(imageArr)
                 // Create a new article element for each product
                 const homeArticles = document.createElement('article');
                 homeArticles.setAttribute('class', 'home-article');
-    
+                // console.log(item)
                 // Loop through each image for the product
                 item.images.forEach(img => {
-                    console.log(img)
+                    // console.log(img)
                     // Create an image element for each image
                     const imgTag = document.createElement('img');
                     imgTag.src = img;
