@@ -20,6 +20,13 @@ const url = `https://fakestoreapi.com/products`
              `
              document.querySelector('.category').appendChild(listItem)
          })
+
+         let all_ratings = 0,
+         all_rate = 0;
+         data.forEach(item => {
+            all_ratings = item.rating.count;
+
+         })
           
     // Getting the Products
           data.forEach(item => {
@@ -33,8 +40,11 @@ const url = `https://fakestoreapi.com/products`
                 <h3>${item.title}</h3>
                 <span>$ ${item.price}</span>
                 <span>${item.rating.rate}</span>
+                <div class="article_star-one>
+                    <div class="article_star-two></div>
+                </div>
                 <span>${item.rating.count}</span>
-                <div>
+                <div class="button-div">
                 <button><a href="#">Add to cart</a></button>
                 </div>
                 
