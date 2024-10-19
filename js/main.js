@@ -1,4 +1,4 @@
-
+// Getting all products and product descriptions
 const url = `https://fakestoreapi.com/products`
 
   fetch(url)
@@ -44,14 +44,68 @@ const url = `https://fakestoreapi.com/products`
               
               `
               document.querySelector('.content-container').append(articles)
+
           })
           
+
           
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 
+// Getting stars and ratings
+
+      async function getStars() {
+        try {
+            const res = await fetch(url)
+
+            if(!res.ok) {
+                throw new Error(`HTTP error: ${res.status}`)
+            }
+
+            const stats = await res.json()
+                let total_rating = 0,
+                rating_based_on_stars = 0;
+                stats.forEach(stat => {
+
+                    total_rating += stat.rating.count;
+                    rating_based_on_stars += stat.rating.count * stat.rating.rate
+                    console.log(total_rating)
+                    console.log(stat.rating.rate)
+                })
+
+                stats.forEach(stat => {
+                   console.log(stat.rating.rate)
+                    // Getting the ratings 
+                                // console.log(rating)
+
+                                let rating_progress = `
+                                        <div class="rating__progress-value">
+                                            <p>${stat.rating.rate} <span class="star">&#9733</span></p>
+                                            <div class="progress">
+                                                <div class="bar" style= "width: ${(stat.rating.count / total_rating) * 100}%;"></div>
+                                            </div>
+                                            <p>${stat.rating.count.toLocaleString()}</p>
+                                        </div>
+                                `;
+        
+                                document.querySelector('.rating__progress').innerHTML = rating_progress;
+        
+                })
+                let average_rating = (rating_based_on_stars / total_rating).toFixed(1)
+                document.querySelector('h1').innerText = average_rating
+                document.querySelector('p').innerText = total_rating
+                document.querySelector('.star-inner').style.width =  (average_rating / 5) * 100  + "%"
+
+        } catch (error) {
+            console.error(error)
+        }
+        
+        
+      }
+
+      getStars()
 
       //Home.html products api call
 
@@ -119,6 +173,7 @@ const url = `https://fakestoreapi.com/products`
                     // Create an image element for each image
                     const imgTag = document.createElement('img');
                     imgTag.src = img;
+                    // console.log(img)
                     imgTag.alt = "item";
     
                     // Append the image to the article
