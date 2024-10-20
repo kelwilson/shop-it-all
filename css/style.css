@@ -277,9 +277,12 @@ hr{
 
 /* article stars and ratings */
 
-/* .article_star-div {
+.article_star-div {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 
-} */
+}
 
 .article_star-one {
   position: relative;
@@ -309,6 +312,14 @@ hr{
 .article_star-two::before {
   content: "\2605\2605\2605\2605\2605";
   color: gold;
+}
+
+.fa-chevron-down {
+  font-size: 1.2rem;
+}
+
+.article_count{
+  font-size: 1.3rem;
 }
 
 .article button {

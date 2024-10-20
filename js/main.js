@@ -43,9 +43,9 @@ const url = `https://fakestoreapi.com/products`
                 <div class="article_star-div">
                 <div class="article_star-one">
                     <div class="article_star-two"></div>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <i class="fa-solid fa-chevron-down"></i>
-                <span>${item.rating.count}</span>
+                <span class= "article_count">${item.rating.count}</span>
                 </div>
                 <div class="button-div">
                 <button><a href="#">Add to cart</a></button>
