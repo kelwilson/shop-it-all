@@ -276,7 +276,12 @@ hr{
 }
 
 /* article stars and ratings */
-.article-star-one {
+
+/* .article_star-div {
+
+} */
+
+.article_star-one {
   position: relative;
   font-size: 2rem;
   display: inline-block;
@@ -284,24 +289,24 @@ hr{
 }
 
 
-.article-star-one ::before {
+.article_star-one::before {
   content: "\2605\2605\2605\2605\2605";
   color: #fff8;
 }
 
-.article-star-two {
+.article_star-two {
   position: absolute;
   font-size: 2rem;
   top: 0;
   left: 0;
 
   height: 30px;
-  width: 0%;
+  width: 70%;
   overflow: hidden;
 }
 
 
-.article-star-two ::before {
+.article_star-two::before {
   content: "\2605\2605\2605\2605\2605";
   color: gold;
 }
