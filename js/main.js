@@ -41,6 +41,7 @@ const url = `https://fakestoreapi.com/products`
                 <img src="${item.image}" alt="item"> 
                 </div>
                 
+                <div class="article-items">
                 <h3>${item.title}</h3>
                 <span>$ ${item.price}</span>
                 <span>${item.rating.rate}</span>
@@ -53,6 +54,7 @@ const url = `https://fakestoreapi.com/products`
                 </div>
                 <div class="button-div">
                 <button><a href="#">Add to cart</a></button>
+                </div>
                 </div>
                 
                 
