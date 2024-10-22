@@ -312,8 +312,18 @@ hr{
   font-size: 2rem;
   display: inline-block;
   height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
+.article_star-one:hover {
+  /* cursor: pointer; */
+  border: 3px solid purple;
+  border-radius: 20px;
+  overflow: hidden;
+  /* padding: 10px; */
+}
 
 .article_star-one::before {
   content: "\2605\2605\2605\2605\2605";
@@ -323,14 +333,18 @@ hr{
 .article_star-two {
   position: absolute;
   font-size: 2rem;
-  top: 0;
+  top: -3px;
   left: 0;
 
   height: 30px;
-  width: 70%;
+  width: 0;
   overflow: hidden;
 }
 
+.article_star-two:hover {
+  /* top: -10px; */
+  overflow: hidden;
+}
 
 .article_star-two::before {
   content: "\2605\2605\2605\2605\2605";
@@ -344,6 +358,14 @@ hr{
 .article_count{
   font-size: 1.2rem;
   margin-left: 3px;
+}
+
+.article_count:hover {
+  cursor: pointer;
+  border: 3px solid purple;
+  border-radius: 20px;
+  /* padding: 0 7px; */
+ 
 }
 
 .article button {
@@ -365,7 +387,7 @@ hr{
 /**********      Stars start      *********/
 #stars {
   min-height: 100%;
-  background: var(#2f4e60);
+  background: #2f4e60;
   color: #fff;
   margin-top: 50rem;
   margin-right: 10rem;

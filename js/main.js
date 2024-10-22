@@ -1,3 +1,6 @@
+// const date = document.querySelector('.date')
+// let now = new date();
+
 // Getting all products and product descriptions
 const url = `https://fakestoreapi.com/products`
 
@@ -22,10 +25,16 @@ const url = `https://fakestoreapi.com/products`
          })
 
          // Getting stars
+         let rate_array = []
          let all_ratings = 0,
          all_rate = 0;
          data.forEach(item => {
-            all_ratings = item.rating.count;
+            rate_array.push(item.rating.rate)
+            console.log(rate_array)
+            all_ratings += item.rating.count;
+            all_rate += item.rating.count * item.rating.rate
+            // console.log(all_ratings)
+            // console.log(item.rating.rate)
 
          })
           
@@ -48,10 +57,9 @@ const url = `https://fakestoreapi.com/products`
                 <span>$ ${item.price}</span>
                 <div class="article_star-div">
                 <div class="article_star-one">
-                    <div class="article_star-two"></div>
-                    
+                    <div class="article_star-two"></div><i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <span class= "article_count"><i class="fa-solid fa-chevron-down"></i> ${item.rating.count}</span>
+                <span class= "article_count"> ${item.rating.count.toLocaleString()}</span>
                 </div>
                 <div class="button-div">
                 <button><a href="#">Add to cart</a></button>
@@ -67,6 +75,12 @@ const url = `https://fakestoreapi.com/products`
 
           })
           
+          //Setting each product ratings 
+          let average_stars = (all_rate / all_ratings).toFixed(1)
+          let star_article = document.querySelectorAll('.article_star-two')
+          star_article.forEach(star => {
+            star.style.width = (average_stars / 5) * 100 + "%";
+          })
 
           
       })
@@ -76,56 +90,56 @@ const url = `https://fakestoreapi.com/products`
 
 // Getting stars and ratings
 
-    //   async function getStars() {
-    //     try {
-    //         const res = await fetch(url)
+      async function getStars() {
+        try {
+            const res = await fetch(url)
 
-    //         if(!res.ok) {
-    //             throw new Error(`HTTP error: ${res.status}`)
-    //         }
+            if(!res.ok) {
+                throw new Error(`HTTP error: ${res.status}`)
+            }
 
-    //         const stats = await res.json()
-    //             let total_rating = 0,
-    //             rating_based_on_stars = 0;
-    //             stats.forEach(stat => {
+            const stats = await res.json()
+                let total_rating = 0,
+                rating_based_on_stars = 0;
+                stats.forEach(stat => {
 
-    //                 total_rating += stat.rating.count;
-    //                 rating_based_on_stars += stat.rating.count * stat.rating.rate
-    //                 console.log(total_rating)
-    //                 console.log(stat.rating.rate)
-    //             })
+                    total_rating += stat.rating.count;
+                    rating_based_on_stars += stat.rating.count * stat.rating.rate
+                    // console.log(total_rating)
+                    // console.log(stat.rating.rate)
+                })
 
-    //             stats.forEach(stat => {
-    //                console.log(stat.rating.rate)
-    //                 // Getting the ratings 
-    //                             // console.log(rating)
+                stats.forEach(stat => {
+                   console.log(stat.rating.rate)
+                    // Getting the ratings 
+                                // console.log(rating)
 
-    //                             let rating_progress = `
-    //                                     <div class="rating__progress-value">
-    //                                         <p>${stat.rating.rate} <span class="star">&#9733</span></p>
-    //                                         <div class="progress">
-    //                                             <div class="bar" style= "width: ${(stat.rating.count / total_rating) * 100}%;"></div>
-    //                                         </div>
-    //                                         <p>${stat.rating.count.toLocaleString()}</p>
-    //                                     </div>
-    //                             `;
+                                let rating_progress = `
+                                        <div class="rating__progress-value">
+                                            <p>${stat.rating.rate} <span class="star">&#9733</span></p>
+                                            <div class="progress">
+                                                <div class="bar" style= "width: ${(stat.rating.count / total_rating) * 100}%;"></div>
+                                            </div>
+                                            <p>${stat.rating.count.toLocaleString()}</p>
+                                        </div>
+                                `;
         
-    //                             document.querySelector('.rating__progress').innerHTML = rating_progress;
+                                document.querySelector('.rating__progress').innerHTML = rating_progress;
         
-    //             })
-    //             let average_rating = (rating_based_on_stars / total_rating).toFixed(1)
-    //             document.querySelector('h1').innerText = average_rating
-    //             document.querySelector('p').innerText = total_rating
-    //             document.querySelector('.star-inner').style.width =  (average_rating / 5) * 100  + "%"
+                })
+                let average_rating = (rating_based_on_stars / total_rating).toFixed(1)
+                document.querySelector('h1').innerText = average_rating
+                document.querySelector('p').innerText = total_rating
+                document.querySelector('.star-inner').style.width =  (average_rating / 5) * 100  + "%"
 
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
+        } catch (error) {
+            console.error(error)
+        }
         
         
-    //   }
+      }
 
-    //   getStars()
+      getStars()
 
       //Home.html products api call
 
