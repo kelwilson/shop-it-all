@@ -33,10 +33,14 @@ const url = `https://fakestoreapi.com/products`
               
               const articles = document.createElement('article')
               articles.setAttribute('class', 'article');
+            //   <span>${item.id}</span> 
               articles.innerHTML = `
                 <a href="#">
-                <span>${item.id}</span>
+                <div class= "article_img-div">
+                
                 <img src="${item.image}" alt="item"> 
+                </div>
+                
                 <h3>${item.title}</h3>
                 <span>$ ${item.price}</span>
                 <span>${item.rating.rate}</span>
