@@ -299,9 +299,8 @@ hr{
 
 .article_star-div {
   display: flex; 
-  /* justify-content: center; */
    align-items: center;
-   /* gap: 3px; */
+ 
 
 }
 
@@ -316,11 +315,9 @@ hr{
 }
 
 .article_star-one:hover {
-  /* cursor: pointer; */
   border: 3px solid purple;
   border-radius: 20px;
   overflow: hidden;
-  /* padding: 10px; */
 }
 
 .article_star-one::before {
@@ -507,3 +504,7 @@ hr{
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+@media screen {
+  
+}
