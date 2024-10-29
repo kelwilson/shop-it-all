@@ -215,9 +215,6 @@ hr{
   transform: rotate(90deg);
 }
 
-/* .aside h2{
-   margin-top: 10px; 
-} */
 
 .category {
   margin: 10px;
@@ -289,8 +286,6 @@ hr{
 }
 
 .article img{
-  /* justify-self: center; */
-  /* background: ; */
   object-fit: scale-down;
   mix-blend-mode: multiply;    /* just learnt how to use this to remove background from an image in css*/
 }
@@ -474,7 +469,7 @@ hr{
   height: 100%;
   background: gold;
   border-radius: .5rem;
-  /* width: 80%; */
+
 }
 
 .bar :nth-child(1){
